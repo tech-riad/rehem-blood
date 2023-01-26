@@ -685,6 +685,7 @@
         </div>
         <div class="modal-body" id="modal-tbody">
             
+            
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -780,10 +781,9 @@
                                     <td>${val.district.name}</td>
                                     <td>${val.upazila.name}</td>
                                     <td>
-                                        <input type="hidden" id="id" value="${val.id}">
-                                        <button type="button" id="modal-show" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <a type="button" id="modal-show" data-id="${val.id}" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="fa fa-eye"></i>
-                                        </button>
+                                        </a>
                                     </td>
                                 </tr>`;
 
@@ -819,7 +819,7 @@
 
                 $(document).on('click','#modal-show', function(e){
                         e.preventDefault();
-                        let id = $('#id').val();
+                        let id = $(this).data('id');
                         $.ajax({
                                 url: '/getPhone',
                                 type: 'get',
@@ -827,16 +827,9 @@
                                     id,
                                 },
                                 success: function (data) {
-                                    
-                                    let html = '';
-                                    data.map(function(item){
-                                            html += `
-                                            <td>${item.phone}</td>
-                                            `;
-                                        });
-                                        $('#modal-tbody').html(html);
-
-
+                                   let html = `<h4>Phone :${data.phone} </h4>`;
+                                        
+                                    $('#modal-tbody').html(html);
                                 }
                         });
                         
