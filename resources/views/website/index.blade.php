@@ -674,6 +674,7 @@
     </div>
 </section>
 <!-- ==== #team section end ==== -->
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -796,24 +797,6 @@
 
             });
         })
-
-       
-
-        // $('#searchBtn').click(function(e){
-        //     e.preventDefault();
-        //     let division_id = $('#division_id').val();
-        //     alert (division_id);
-        // })
-        // $('#searchBtn').click(function(e){
-        //     e.preventDefault();
-        //     let district_id = $('#district_id').val();
-        //     alert (district_id);
-        // })
-        // $('#searchBtn').click(function(e){
-        //     e.preventDefault();
-        //     let upazila_id = $('#upazila_id').val();
-        //     alert (upazila_id);
-        // })
 
     });
 

@@ -19,13 +19,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->nullable();
             $table->string('phone')->unique();
-            $table->string('pasword');
+            $table->string('password');
             $table->string('blood_group');
             $table->string('dob');
             $table->string('age');
             $table->string('occupation')->nullable();
             $table->string('height')->nullable();
             $table->string('weight')->nullable();
+            $table->string('image')->nullable();
             $table->unsignedBigInteger('division_id');
             $table->unsignedBigInteger('district_id');
             $table->unsignedBigInteger('upazila_id');

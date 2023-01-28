@@ -7,7 +7,10 @@ use App\Models\Donor;
 use App\Models\District;
 use App\Models\Division;
 use App\Models\Upazila;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class DonorController extends Controller
@@ -17,8 +20,27 @@ class DonorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
+       
+    }
+    public function donor_dashboard()
+    {
+        $donors = Donor::all();
+        $divisions = Division::all();
+        $districts = District::all();
+        $upazilas = Upazila::all();
+       return view('donor.dashboard',compact('donors','divisions','districts','upazilas'));
+    }
+    public function update_donor($id)
+    {
+       
+    }
+    public function donor_login()
+    {
+        return view('auth.donor_login');
        
     }
 
@@ -57,11 +79,20 @@ class DonorController extends Controller
         ]);
         $data = $request->all();
         $data ['user_name'] = $request->phone;
-        $data ['pasword'] = Hash::make($request->phone);
+        $data ['password'] = Hash::make($request->phone);
         
         $donor  = Donor::create($data);
 
-        return redirect()->back();
+        if (Auth::guard('donor')->attempt(['email' => $request->email, 'password' => $request->phone])){
+            return redirect()->route('donor-dashboard.donor_dashboard');
+        }else{
+
+            return redirect()->route('donor-dashboard.donor_dashboard');
+        
+        }
+        
+
+        
 
     }
 
@@ -109,4 +140,7 @@ class DonorController extends Controller
     {
         //
     }
+
+
+   
 }

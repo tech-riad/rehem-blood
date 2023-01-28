@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\DonorAuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
@@ -91,6 +92,22 @@ Route::group(['as'=>'app.','prefix'=>'app','namespace'=>'Backend','middleware'=>
 
 Route::group(['as'=>'donor-register.','prefix'=>'donor-register'],function(){
 
+    Route::get('/create',[DonorController::class,'create'])->name('donor_registration');
+    Route::post('/store',[DonorController::class,'store'])->name('donor_store');
+    
+ 
+
+});
+
+// Donor
+Route::get('/donor-login',[DonorController::class,'donor_login'])->name('donor_login');
+Route::post('/donor-login',[DonorAuthController::class,'donorLogin'])->name('donorLogin');
+
+Route::group(['as'=>'donor-dashboard.','prefix'=>'donor-dashboard'],function(){
+
+    
+    Route::get('/dashboard',[DonorController::class,'donor_dashboard'])->name('donor_dashboard');
+    Route::post('/dashboard/{id}',[DonorController::class,'update_donor'])->name('update_donor');
     Route::get('/create',[DonorController::class,'create'])->name('donor_registration');
     Route::post('/store',[DonorController::class,'store'])->name('donor_store');
     

@@ -32,12 +32,18 @@
                                     <div class="hidden">
                                         @auth
                                             <a href="{{ url('/app/dashboard') }}" class="button button--effect">Dashboard</a>
+                                        @else'
+
+                                        @if (Auth::guard('donor')->check())
+                                        <a href="{{ route('donor-dashboard.donor_dashboard') }}" class="button button--effect">Donor</a>
                                         @else
-                                            <a href="{{ route('login') }}" class="button button--effect">Log in</a>
-                    
-                                            @if (Route::has('register'))
+                                        <a href="{{ route('donorLogin') }}" class="button button--effect">Donor</a>
+                                        <a href="{{ route('login') }}" class="button button--effect">Admin</a>
+                                        
+                                        @endif
+                                            {{-- @if (Route::has('register'))
                                                 <a href="{{ route('register') }}" class="button button--effect">Register</a>
-                                            @endif
+                                            @endif --}}
                                         @endauth
                                     </div>
                                 @endif
