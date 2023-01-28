@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BloodRequest;
 use Illuminate\Http\Request;
 
 class BloodRequestController extends Controller
@@ -34,7 +35,22 @@ class BloodRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'blood_group' => 'required',
+            'message' => 'required',
+        ]);
+
+        $data = $request->all();
+
+        $bloodrequest  = BloodRequest::create($data);
+
+        $notification = array(
+            'message' =>'Request Submitted Successfully ',
+            'alert-type' =>'success'
+        );
+        return redirect()->route('home')->with($notification);
     }
 
     /**

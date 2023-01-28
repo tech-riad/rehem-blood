@@ -7,7 +7,7 @@
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="javascript:void(0)" id="navbarHomeDropdown"
+                        <a class="nav-link  active" href="javascript:void(0)" id="navbarHomeDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
@@ -17,46 +17,32 @@
                         <a class="nav-link" href="about-us.html">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarCampaignDropdown"
+                        <a class="nav-link " href="javascript:void(0)" id="navbarCampaignDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Campaign
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarCampaignDropdown">
-                            <li><a class="dropdown-item" href="campaigns.html">Campaigns</a></li>
-                            <li><a class="dropdown-item" href="campaign-details.html">Campaign Details</a></li>
-                        </ul>
+                        
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
+                        <a class="nav-link " href="javascript:void(0)" id="navbarDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="services.html">Our Services</a></li>
-                            <li><a class="dropdown-item" href="service-details.html">Service Details</a></li>
-                            <li><a class="dropdown-item" href="team.html">Team Members</a></li>
-                            <li><a class="dropdown-item" href="donate-now.html">Donate Now</a></li>
-                            <li><a class="dropdown-item" href="gallery.html">Photo Gallery</a></li>
-                            <li><a class="dropdown-item" href="register.html">Registration Now</a></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a class="dropdown-item" href="terms-conditions.html">Terms & Conditions</a></li>
-                            <li><a class="dropdown-item" href="404.html">Error</a></li>
-                        </ul>
+                        
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarBlogDropdown"
+                        <a class="nav-link " href="javascript:void(0)" id="navbarBlogDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Blog
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarBlogDropdown">
+                        {{-- <ul class="dropdown-menu" aria-labelledby="navbarBlogDropdown">
                             <li><a class="dropdown-item" href="blog.html">Blog</a></li>
                             <li><a class="dropdown-item" href="blog-two.html">Blog Two</a></li>
                             <li><a class="dropdown-item" href="blog-three.html">Blog Three</a></li>
                             <li><a class="dropdown-item" href="blog-details.html">Blog Details</a></li>
                             <li><a class="dropdown-item" href="blog-details-two.html">Blog Details Two</a></li>
                             <li><a class="dropdown-item" href="blog-details-three.html">Blog Details Three</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact-us.html">Contact Us</a>
@@ -65,15 +51,7 @@
             </div>
             <div class="navbar-out order-2 order-xl-3">
                 <div class="navbar-out__group">
-                    <a href="javascript:void(0)" class="search-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                    <select class="select-language">
-                        <option value="english">English</option>
-                        <option value="spanish">Spanish</option>
-                        <option value="china">China</option>
-                        <option value="germany">Germany</option>
-                    </select>
+                    
                     <a href="javascript:void(0)" class="d-none d-xl-block open-sidenav">
                         <span class="icon-bar top-bar"></span>
                         <span class="icon-bar middle-bar"></span>

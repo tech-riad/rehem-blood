@@ -68,6 +68,8 @@ Route::group(['as'=>'app.','prefix'=>'app','namespace'=>'Backend','middleware'=>
     Route::group(['as'=>'blood-request.','prefix'=>'blood-request'],function(){
 
         Route::get('/',[BloodRequestController::class,'index'])->name('index');
+        Route::post('/blood',[BloodRequestController::class,'create'])->name('create');
+        Route::post('/store',[BloodRequestController::class,'store'])->name('store');
         
      
 

@@ -267,46 +267,7 @@
 
 
 <!-- ==== organization section start ==== -->
-<section class="organization organization-alt section-space">
-    <div class="container">
-        <div class="row neutral-row">
-            <div class="col-lg-12 row-item">
-                <div class="organization-area">
-                    <div class="row d-flex align-items-center">
-                        <div class="col-lg-5">
-                            <div class="organization-area__thumb dir-ltr mb-30 text-center">
-                                <img src="assets/images/organization-illustration.png" alt="Organization">
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="organization-area__content wow fadeInUp">
-                                <p class="neutral-ascender primary descender">Help The People in Need</p>
-                                <h2>Welcome to Blood Donors Organization</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. suspendisse the gravida. Risus commodo
-                                    viverra maecenas</p>
 
-                                <div class="organization-area__content-points">
-                                    <ul>
-                                        <li><i class="fa-solid fa-angles-right"></i>Good Service</li>
-                                        <li><i class="fa-solid fa-angles-right"></i>Help People</li>
-                                        <li><i class="fa-solid fa-angles-right"></i>Hygine Tools</li>
-                                    </ul>
-                                    <ul>
-                                        <li><i class="fa-solid fa-angles-right"></i>24h Service</li>
-                                        <li><i class="fa-solid fa-angles-right"></i>Health Check</li>
-                                        <li><i class="fa-solid fa-angles-right"></i>Blood Bank</li>
-                                    </ul>
-                                </div>
-                                <a href="services.html" class="button button--effect">Explore Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- ==== #organization section end ==== -->
 
 <!-- ==== counter start ==== -->
@@ -393,112 +354,7 @@
 </section>
 <!-- ==== #call now section end ==== -->
 
-<!-- ==== campaign section start ==== -->
-<section class="campaign section-space">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="campaign-area">
-                    <div class="section-header section-inner-space">
-                        <p class="primary neutral-ascender descender">Donate Now</p>
-                        <h2 class="neutral-bottom">Popular Campaigns</h2>
-                    </div>
-                    <div class="campaign-area__slider">
-                        <div class="campaign-area__single img-effect">
-                            <div class="campaign-area__single-inner">
-                                <div class="poster campaign-area__single-inner__item">
-                                    <a href="campaign-details.html">
-                                        <img src="assets/images/campaigns/free-group.png" alt="Free Blood Donation">
-                                    </a>
-                                    <a href="campaign-details.html" class="read-more">Read More</a>
-                                </div>
-                                <div class="campaign-area__single-inner__item campaign-area__single-inner__content">
-                                    <p class="date text-icon-group">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        13 February, 2022
-                                    </p>
-                                    <h6><a href="blog-details.html">Free Group Checking</a></h6>
-                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do
-                                        incididunt et dolore magna sit consectetur.</p>
-                                    <div class="group">
-                                        <p class="text-icon-group">
-                                            <i class="fa-solid fa-clock"></i>
-                                            10.00 - 4.00
-                                        </p>
-                                        <p class="text-icon-group">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            Broklyn 40, USA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="campaign-area__single img-effect">
-                            <div class="campaign-area__single-inner">
-                                <div class="poster campaign-area__single-inner__item">
-                                    <a href="campaign-details.html">
-                                        <img src="assets/images/campaigns/blood-donation-group.png"
-                                            alt="Blood Donation">
-                                    </a>
-                                    <a href="campaign-details.html" class="read-more">Read More</a>
-                                </div>
-                                <div class="campaign-area__single-inner__item campaign-area__single-inner__content">
-                                    <p class="date text-icon-group">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        14 February, 2022
-                                    </p>
-                                    <h6><a href="blog-details.html">Blood Donation Camp</a></h6>
-                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do
-                                        incididunt et dolore magna sit consectetur.</p>
-                                    <div class="group">
-                                        <p class="text-icon-group">
-                                            <i class="fa-solid fa-clock"></i>
-                                            11.00 - 4.00
-                                        </p>
-                                        <p class="text-icon-group">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            Broklyn 40, USA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="campaign-area__single img-effect">
-                            <div class="campaign-area__single-inner">
-                                <div class="poster campaign-area__single-inner__item">
-                                    <a href="campaign-details.html">
-                                        <img src="assets/images/campaigns/free-group.png" alt="Free Blood Donation">
-                                    </a>
-                                    <a href="campaign-details.html" class="read-more">Read More</a>
-                                </div>
-                                <div class="campaign-area__single-inner__item campaign-area__single-inner__content">
-                                    <p class="date text-icon-group">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        15 February, 2022
-                                    </p>
-                                    <h6><a href="blog-details.html">Free Group Checking</a></h6>
-                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do
-                                        incididunt et dolore magna sit consectetur.</p>
-                                    <div class="group">
-                                        <p class="text-icon-group">
-                                            <i class="fa-solid fa-clock"></i>
-                                            12.00 - 4.00
-                                        </p>
-                                        <p class="text-icon-group">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            Broklyn 40, USA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ==== #camapign section end ==== -->
+
 
 <!-- ==== donor section end ==== -->
 <section class="donor dark-overlay section-space bg-img" data-background="assets/images/blood-donor-bg.png">
@@ -533,46 +389,44 @@
                                 <h4>Current Blood Request</h4>
                                 <ul>
                                     <li><i class="fa-solid fa-heart"></i>B+ Washington, USA (13.02.2022)</li>
-                                    <li><i class="fa-solid fa-heart"></i>O- Washington, USA (13.02.2022)</li>
-                                    <li><i class="fa-solid fa-heart"></i>B- Washington, USA (13.02.2022)</li>
-                                    <li><i class="fa-solid fa-heart"></i>AB- Washington, USA (13.02.2022)</li>
-                                    <li><i class="fa-solid fa-heart"></i>O+ Washington, USA (13.02.2022)</li>
-                                    <li><i class="fa-solid fa-heart"></i>B+ Washington, USA (13.02.2022)</li>
-                                    <li><i class="fa-solid fa-heart"></i>AB+ Washington, USA (13.02.2022)</li>
-                                    <li><i class="fa-solid fa-heart"></i>B+ Washington, USA (13.02.2022)</li>
+                                    
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-6 row-item">
                             <div class="appointment-area__single appointment-area__form">
-                                <h4>Request Appointment Here</h4>
-                                <form action="#" method="post" name="appointmentForm">
+                                <h4>Request For Blood</h4>
+                                <form action="{{route('app.blood-request.store')}}" method="post" name="appointmentForm">
+                                    @csrf
                                     <div class="input-group-column">
                                         <div class="input">
-                                            <input type="text" name="appointment__name" id="appointmentName"
-                                                placeholder="Your Name" required>
+                                            <input type="text" name="name" id="appointmentName"
+                                                placeholder="Your Name" >
                                         </div>
                                         <div class="input">
-                                            <input type="number" name="appointment__number" id="appointmentNumber"
-                                                placeholder="Phone Number" required>
+                                            <input type="number" name="phone" id="appointmentNumber"
+                                                placeholder="Phone Number" >
                                         </div>
                                     </div>
                                     <div class="input">
-                                        <input type="email" name="appointment__email" id="appointmentEmail"
-                                            placeholder="Your Email" required>
+                                        <input type="email" name="email" id="appointmentEmail"
+                                            placeholder="Your Email" >
                                     </div>
                                     <div class="input">
-                                        <select class="select-donation-type">
-                                            <option data-display="Donation Type">Donation Type</option>
-                                            <option value="free">Free Donation</option>
-                                            <option value="health">Health Checkup</option>
-                                            <option value="paid">Paid Donation</option>
+                                        <select class="select-donation-type" name="blood_group">
+                                            <option data-display="Blood Group" selected>Blood Group</option>
+                                                   <option value="AB+">AB+</option>
+                                                   <option value="AB-">AB-</option>
+                                                   <option value="O+">O+</option>
+                                                   <option value="O-">O-</option>
+                                                   <option value="A+">A+</option>
+                                                   <option value="A-">A-</option>
                                         </select>
                                     </div>
 
                                     <div class="input">
-                                        <textarea name="appointment__message" id="appointmentMessage" cols="30"
-                                            rows="10" placeholder="Your Message"></textarea>
+                                        <textarea name="message" id="appointmentMessage" cols="30"
+                                            rows="10" placeholder="Enter Your Message with full information"></textarea>
                                     </div>
                                     <button type="submit" class="button button--tertiary button--effect">Submit
                                         Now</button>
@@ -587,93 +441,8 @@
 </section>
 <!-- ==== #appointment section end ==== -->
 
-<!-- ==== team section start ==== -->
-<section class="team section-space-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="team-area">
-                    <div class="section-header section-inner-space">
-                        <p class="primary neutral-ascender descender">Team Members</p>
-                        <h2 class="neutral-descender">Meet Volunteers</h2>
-                    </div>
-                    <div class="row neutral-row justify-content-center">
-                        <div class="col-sm-6 col-md-6 col-lg-4 row-item align-center">
-                            <div class="team-area__single img-effect">
-                                <div class="poster">
-                                    <img src="assets/images/volunteers/nora.png" alt="Nora">
-                                    <div class="social social--secondary">
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="fa-brands fa-facebook-f"></i>
-                                        </a>
-                                        <a href="https://www.twitter.com/" target="_blank">
-                                            <i class="fa-brands fa-twitter"></i>
-                                        </a>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </a>
-                                        <a href="https://www.pinterest.com/" target="_blank">
-                                            <i class="fa-brands fa-pinterest-p"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h5>Nora Khaypeia</h5>
-                                <p class="secondary neutral-descender">Co-Founder</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 row-item align-center">
-                            <div class="team-area__single img-effect wow fadeInUp">
-                                <div class="poster">
-                                    <img src="assets/images/volunteers/joshi.png" alt="Alex Joshan Deo">
-                                    <div class="social social--secondary">
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="fa-brands fa-facebook-f"></i>
-                                        </a>
-                                        <a href="https://www.twitter.com/" target="_blank">
-                                            <i class="fa-brands fa-twitter"></i>
-                                        </a>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </a>
-                                        <a href="https://www.pinterest.com/" target="_blank">
-                                            <i class="fa-brands fa-pinterest-p"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h5>Nora Khaypeia</h5>
-                                <p class="secondary neutral-descender">Co-Founder</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 row-item align-center">
-                            <div class="team-area__single img-effect wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="poster">
-                                    <img src="assets/images/volunteers/alex.png" alt="Alex Joshi Deon">
-                                    <div class="social social--secondary">
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="fa-brands fa-facebook-f"></i>
-                                        </a>
-                                        <a href="https://www.twitter.com/" target="_blank">
-                                            <i class="fa-brands fa-twitter"></i>
-                                        </a>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </a>
-                                        <a href="https://www.pinterest.com/" target="_blank">
-                                            <i class="fa-brands fa-pinterest-p"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h5>Alex Joshi Deon</h5>
-                                <p class="secondary neutral-descender">Co-Founder</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ==== #team section end ==== -->
+
+
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
