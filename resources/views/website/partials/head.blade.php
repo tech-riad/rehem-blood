@@ -17,6 +17,8 @@
    <!-- ==== css dependencies start ==== -->
 
    <!-- bootstrap five css -->
+
+
    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
    <!-- font awesome six css -->
    <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/all.min.css')}}">
@@ -39,4 +41,4 @@
 
    <!-- main css -->
    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-   {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+   

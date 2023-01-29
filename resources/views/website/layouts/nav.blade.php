@@ -1,19 +1,33 @@
 <header class="header">
     <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="{{url('/')}}">
-                <img src="{{asset('assets/images/logo-light.png')}}" alt="Logo" class="logo">
+            <a class="navbar-nav" href="{{url('/')}}">
+                <img src="{{asset('assets/images/logo-light.png')}}" alt="Logo" role="button">
             </a>
-            <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
+            <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" >
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link  active" href="javascript:void(0)" id="navbarHomeDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link  active" href="{{url('/')}}" 
+                              aria-expanded="false">
                             Home
                         </a>
                         
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
+                        <a class="nav-link  " href="{{route('donor-register.donor_registration')}}" 
+                              aria-expanded="false">
+                            Be a donor
+                        </a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  " href="{{route('donor-search.donor_search')}}" 
+                            aria-expanded="false">
+                            Search Donor
+                        </a>
+                        
+                    </li>
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="about-us.html">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -34,7 +48,7 @@
                         <a class="nav-link " href="javascript:void(0)" id="navbarBlogDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Blog
-                        </a>
+                        </a> --}}
                         {{-- <ul class="dropdown-menu" aria-labelledby="navbarBlogDropdown">
                             <li><a class="dropdown-item" href="blog.html">Blog</a></li>
                             <li><a class="dropdown-item" href="blog-two.html">Blog Two</a></li>
@@ -43,13 +57,13 @@
                             <li><a class="dropdown-item" href="blog-details-two.html">Blog Details Two</a></li>
                             <li><a class="dropdown-item" href="blog-details-three.html">Blog Details Three</a></li>
                         </ul> --}}
-                    </li>
+                    {{-- </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact-us.html">Contact Us</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
-            <div class="navbar-out order-2 order-xl-3">
+            {{-- <div class="navbar-out order-2 order-xl-3">
                 <div class="navbar-out__group">
                     
                     <a href="javascript:void(0)" class="d-none d-xl-block open-sidenav">
@@ -64,7 +78,7 @@
                     <span class="icon-bar middle-bar"></span>
                     <span class="icon-bar bottom-bar"></span>
                 </button>
-            </div>
+            </div> --}}
         </div>
     </nav>
 </header>
@@ -111,5 +125,7 @@
                         <button type="submit" class="button button--effect"><i class="fa-solid fa-paper-plane"></i></button>
                     </div>
                 </form>
+
+                
             </div>
         </div>

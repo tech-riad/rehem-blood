@@ -36,6 +36,11 @@ Route::get('/getDistrict',[IndexController::class, 'getDistrict'])->name('getDis
 Route::get('/getUpazila',[IndexController::class, 'getUpazila'])->name('getUpazila');
 Route::post('/getByBloodGroup',[IndexController::class, 'getByBloodGroup'])->name('getByBloodGroup');
 
+// 
+Route::get('/getDistrict',[DonorController::class, 'getDistrict'])->name('getDistrict');
+Route::get('/getUpazila',[DonorController::class, 'getUpazila'])->name('getUpazila');
+
+
 
 Route::group(['as'=>'app.','prefix'=>'app','namespace'=>'Backend','middleware'=>['auth','web']],function () {
 
@@ -96,6 +101,14 @@ Route::group(['as'=>'donor-register.','prefix'=>'donor-register'],function(){
 
     Route::get('/create',[DonorController::class,'create'])->name('donor_registration');
     Route::post('/store',[DonorController::class,'store'])->name('donor_store');
+    
+ 
+
+});
+Route::group(['as'=>'donor-search.','prefix'=>'donor-search'],function(){
+
+    Route::get('/',[IndexController::class,'search_donor'])->name('donor_search');
+    // Route::post('/store',[DonorController::class,'store'])->name('donor_store');
     
  
 

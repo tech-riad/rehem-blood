@@ -29,16 +29,16 @@
                         <div class="col-lg-4">
                             <div class="topbar-area__right">
                                 @if (Route::has('login'))
-                                    <div class="hidden">
+                                    <div class="">
                                         @auth
-                                            <a href="{{ url('/app/dashboard') }}" class="button button--effect">Dashboard</a>
+                                            <a href="{{ url('/app/dashboard') }}" style="color:#fff;" class="button button--effect">Dashboard</a>
                                         @else'
 
                                         @if (Auth::guard('donor')->check())
-                                        <a href="{{ route('donor-dashboard.donor_dashboard') }}" class="button button--effect">Donor</a>
+                                        <a href="{{ route('donor-dashboard.donor_dashboard') }}"style="color:#fff;"  class="button  button--effect">Donor</a>
                                         @else
-                                        <a href="{{ route('donorLogin') }}" class="button button--effect">Donor</a>
-                                        <a href="{{ route('login') }}" class="button button--effect">Admin</a>
+                                        <a href="{{ route('donorLogin') }}" style="color:#fff;"  class="button button--effect">Donor</a>
+                                        <a href="{{ route('login') }}" style="color:#fff;"  class="button button--effect">Admin</a>
                                         
                                         @endif
                                             {{-- @if (Route::has('register'))

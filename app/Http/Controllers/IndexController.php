@@ -23,6 +23,13 @@ class IndexController extends Controller
         $upazilas = Upazila::all();
         return view('website.index',compact('districts','divisions','upazilas'));
     }
+    public function search_donor()
+    {
+        $districts = District::all();
+        $divisions = Division::all();
+        $upazilas = Upazila::all();
+        return view('website.searchdonor.index',compact('districts','divisions','upazilas'));
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -1,5 +1,7 @@
 @extends('website.layouts.app')
 
+
+
 <!-- ==== topbar start ==== -->
 @section('content')
 
@@ -190,7 +192,8 @@
                                                 <option value="A-">A-</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-3"> <label for="division_id">Division</label>
+                                        <div class="col-sm-3"> 
+                                            <label for="division_id">Division</label>
                                             <select name="division_id" id="division_id"
                                                 class="form-control chosen-select">
                                                 <option value="">Select One</option>
@@ -199,7 +202,8 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-sm-3"> <label for="district_id">District</label>
+                                        <div class="col-sm-3"> 
+                                            <label for="district_id">District</label>
                                             <select name="district_id" id="district_id" class="form-control">
                                                 <option value="">Select District</option>
 
@@ -271,7 +275,7 @@
 <!-- ==== #organization section end ==== -->
 
 <!-- ==== counter start ==== -->
-<div class="counter dark-overlay bg-img" data-background="assets/images/counter/counter-bg.png">
+{{-- <div class="counter dark-overlay bg-img" data-background="assets/images/counter/counter-bg.png">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -321,12 +325,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- ==== #counter end ==== -->
 
 
 <!-- ==== call now section start ==== -->
-<section class="call dark-overlay bg-img" data-background="assets/images/call-now-bg.png">
+{{-- <section class="call dark-overlay bg-img" data-background="assets/images/call-now-bg.png">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -351,7 +355,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ==== #call now section end ==== -->
 
 
@@ -444,12 +448,12 @@
 
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="myModal">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" id="modal-close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
@@ -458,7 +462,7 @@
             
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" id="modal-close" data-dismiss="modal">Close</button>
         
         </div>
     </div>
@@ -469,6 +473,7 @@
 
 <script>
     $(document).ready(function () {
+        
         $('#division_id').change(function (e) {
             e.preventDefault();
             let division_id = $(this).val();
@@ -569,8 +574,11 @@
 
     });
 
+    
                 $(document).on('click','#modal-show', function(e){
                         e.preventDefault();
+                        $('#myModal').modal('show');
+                        
                         let id = $(this).data('id');
                         $.ajax({
                                 url: '/getPhone',
@@ -587,6 +595,11 @@
                         
                         
 
+                    });
+                $(document).on('click','#modal-close', function(e){
+                        e.preventDefault();
+                        $('#myModal').modal('hide');
+                        
                     });
 
 

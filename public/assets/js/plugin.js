@@ -312,8 +312,8 @@
         // select last donate year
         $(".select-last-year").niceSelect();
 
-        // select registration country
-        $(".select-regi-country").niceSelect();
+        // // select registration country
+        // $(".select-regi-country").niceSelect();
 
         // blog poster slider
         $(".poster-slider__wrapper")

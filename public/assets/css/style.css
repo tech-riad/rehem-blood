@@ -2954,6 +2954,7 @@ Preloader Area Style*/
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease-out;
+  color: #fff;
 }
 .topbar-area__left a i {
   padding-right: 10px;
@@ -2963,6 +2964,7 @@ Preloader Area Style*/
 }
 .topbar-area__left a:hover {
   color: #ffffff;
+  text-decoration: none;
 }
 
 .topbar-area__right {
@@ -4932,12 +4934,12 @@ Preloader Area Style*/
 
 .appointment-area {
   position: relative;
-  top: -55px;
+  top: 15px;
   z-index: 9;
 }
 @media (max-width: 1199px) {
   .appointment-area {
-    top: -60px;
+    top: 10px;
   }
 }
 

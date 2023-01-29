@@ -50,7 +50,7 @@ class BloodRequestController extends Controller
             'message' =>'Request Submitted Successfully ',
             'alert-type' =>'success'
         );
-        return redirect()->route('home')->with($notification);
+        return redirect()->back()->with($notification);
     }
 
     /**

@@ -24,8 +24,10 @@ class DonorController extends Controller
 
     public function index()
     {
+        
        
     }
+    
     public function donor_dashboard()
     {
         $donors = Donor::all();
@@ -43,6 +45,26 @@ class DonorController extends Controller
         return view('auth.donor_login');
        
     }
+
+    public function getDistrict(Request $request)
+    {
+       $division_id = $request->division_id;
+       $data = DB::table('districts')->where('division_id',$division_id)->get();
+       return response()->json($data);
+    }
+    public function getUpazila(Request $request)
+    {
+        
+       $district_id = $request->district_id;
+       $data = DB::table('upazilas')->where('district_id',$district_id)->get();
+       
+       
+       return response()->json($data);
+
+       
+    }
+
+     
 
     /**
      * Show the form for creating a new resource.
@@ -74,6 +96,7 @@ class DonorController extends Controller
             'blood_group' => 'required',
             'division_id' => 'required',
             'district_id' => 'required',
+            'upazila_id' => 'required',
             'area' => 'required',
             
         ]);
