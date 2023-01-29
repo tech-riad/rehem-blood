@@ -66,9 +66,8 @@
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="fullName">Full Name</label>
-                                            <input type="text" class="form-control" name="name"
-                                                value="{{Auth::guard('donor')->user()->name ?? ''}}" id="fullName"
-                                                placeholder="Enter full name">
+                                            <input type="text" class="form-control" name="name" value="{{Auth::guard('donor')->user()->name ?? ''}}"
+                                                id="fullName" placeholder="Enter full name">
                                         </div>
                                     </div>
 
@@ -76,8 +75,7 @@
                                         <div class="form-group">
                                             <label for="eMail">Email</label>
                                             <input type="email" class="form-control" id="eMail"
-                                                placeholder="Enter email ID" name="email"
-                                                value="{{Auth::guard('donor')->user()->email ?? '' }}">
+                                                placeholder="Enter email ID" name="email" value="{{Auth::guard('donor')->user()->email ?? '' }}">
                                         </div>
                                     </div>
 
@@ -89,21 +87,19 @@
                                                 value="{{Auth::guard('donor')->user()->phone ??  ''}}">
                                         </div>
                                     </div>
-
+                                    
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="mothername">Date Of Birth</label>
-                                            <input type="date" name="dob" class="form-control"
-                                                value="{{Auth::guard('donor')->user()->dob ?? '' }}" id="mothername">
+                                            <input type="date" name="dob" class="form-control" value="{{Auth::guard('donor')->user()->dob ?? '' }}" id="mothername">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="phone">Blood Group</label>
                                             <select class="form-control" name="blood_group" id="">
-
-                                                <option
-                                                    value="{{Auth::guard('donor')->user()->blood_group ?? ''}} selected">
+                                                
+                                                <option value="{{Auth::guard('donor')->user()->blood_group ?? ''}} selected">
                                                     {{Auth::guard('donor')->user()->blood_group ?? ''}}</option>
                                                 <option value="A+">
                                                     A+</option>
@@ -130,7 +126,7 @@
                                             <label for="phone">Division</label>
                                             <select name="division_id" id="division_id"
                                                 class="form-control chosen-select">
-                                                <option value="">Select One</option>
+                                                <option value="{{Auth::guard('donor')->user()->division_id ?? ''}}">{{Auth::guard('donor')->user()->division->name ?? ''}}</option>
                                                 @foreach ($divisions as $dv)
                                                 <option value="{{$dv->id}}">{{$dv->name}}</option>
                                                 @endforeach
@@ -142,7 +138,7 @@
                                         <div class="form-group">
                                             <label for="phone">District</label>
                                             <select name="district_id" id="district_id" class="form-control">
-                                                <option value="">Select District</option>
+                                                <option value="{{Auth::guard('donor')->user()->district_id ?? ''}}">{{Auth::guard('donor')->user()->district->name ?? ''}}</option>
 
                                             </select>
                                         </div>
@@ -152,7 +148,7 @@
                                         <div class="form-group">
                                             <label for="phone">Upazila</label>
                                             <select name="upazila_id" id="upazila_id" class="form-control">
-                                                <option value="">Select Upazila</option>
+                                                <option value="{{Auth::guard('donor')->user()->upazila_id?? ''}}">{{Auth::guard('donor')->user()->upazila->name ?? ''}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -173,56 +169,53 @@
 
 <script>
     $(document).ready(function () {
-        $('#division_id').change(function (e) {
-            e.preventDefault();
-            let division_id = $(this).val();
+    $('#division_id').change(function (e) {
+        e.preventDefault();
+        let division_id = $(this).val();
 
-            $.ajax({
-                url: '/getDistrict',
-                type: 'GET',
-                data: {
-                    division_id
-                },
-                success: function (data) {
-                    let html = '<option>Select District</option>';
+        $.ajax({
+            url: '/getDistrict',
+            type: 'GET',
+            data: {division_id},
+            success: function (data) {
+               let html = '<option>Select District</option>';
 
-                    data.map(function (item) {
-                        html += `<option value="${item.id}">${item.name}</option>`;
-                    });
+               data.map(function(item){
+                    html += `<option value="${item.id}">${item.name}</option>`;
+               });
 
-                    $('#district_id').html(html);
-                }
-            });
-
+               $('#district_id').html(html);
+            }
         });
+       
+    });
 
-        $('#district_id').change(function (e) {
-            e.preventDefault();
-            let district_id = $(this).val();
+    $('#district_id').change(function (e) {
+        e.preventDefault();
+        let district_id = $(this).val();
 
-            $.ajax({
-                url: '/getUpazila',
-                type: 'get',
-                data: {
-                    district_id
-                },
-                success: function (data) {
-                    let html = '<option>Select Upazila</option>';
+        $.ajax({
+            url: '/getUpazila',
+            type: 'get',
+            data: {district_id},
+            success: function (data) {
+                let html = '<option>Select Upazila</option>';
+                
+                data.map(function(item){
+                    html += `<option value="${item.id}">${item.name}</option>`;
+                });
 
-                    data.map(function (item) {
-                        html += `<option value="${item.id}">${item.name}</option>`;
-                    });
-
-                    $('#upazila_id').html(html);
-                }
-            });
-        });
-        $('#upazila_id').change(function (e) {
-            e.preventDefault();
-            let upazila_id = $(this).val();
-
+                $('#upazila_id').html(html);
+            }
         });
     });
+    $('#upazila_id').change(function (e) {
+        e.preventDefault();
+        let upazila_id = $(this).val();
+
+    });
+});
+    
 
 </script>
 
