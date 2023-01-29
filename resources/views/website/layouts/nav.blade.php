@@ -13,13 +13,19 @@
                         </a>
                         
                     </li>
+
+                    @if (isset(Auth::guard('donor')->user()->email ))
+                      
+                    @else
                     <li class="nav-item ">
                         <a class="nav-link  " href="{{route('donor-register.donor_registration')}}" 
                               aria-expanded="false">
                             Be a donor
                         </a>
                         
-                    </li>
+                    </li>  
+                    @endif
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link  " href="{{route('donor-search.donor_search')}}" 
                             aria-expanded="false">
