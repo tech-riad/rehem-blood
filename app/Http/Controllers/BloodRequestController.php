@@ -21,7 +21,7 @@ class BloodRequestController extends Controller
         $districts = District::all();
         $upazilas = Upazila::all();
         $bloodrequests = BloodRequest::orderBy('created_at', 'desc')->get();
-        return view('bloodrequest.index',compact('bloodrequest','divisions','districts','upazilas'));
+        return view('bloodrequest.index',compact('bloodrequests','divisions','districts','upazilas'));
     }
    
 
