@@ -192,7 +192,7 @@
                                                 <option value="A-">A-</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-3"> 
+                                        <div class="col-sm-3">
                                             <label for="division_id">Division</label>
                                             <select name="division_id" id="division_id"
                                                 class="form-control chosen-select">
@@ -202,7 +202,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-sm-3"> 
+                                        <div class="col-sm-3">
                                             <label for="district_id">District</label>
                                             <select name="district_id" id="district_id" class="form-control">
                                                 <option value="">Select District</option>
@@ -243,11 +243,11 @@
                                             <th>Upazila</th>
                                             <th>Contact </th>
                                         </tr>
-                                        
-                                        
+
+
                                     </thead>
                                     <tbody id="donor-tbody">
-                                   
+
                                     </tbody>
                                 </table>
                             </div>
@@ -257,9 +257,9 @@
             </div>
         </div>
     </div>
-    
-        
-   
+
+
+
 
 
 </section>
@@ -391,45 +391,70 @@
                         <div class="col-lg-6 row-item">
                             <div class="appointment-area__single appointment-area__content">
                                 <h4>Current Blood Request</h4>
-                                <ul>
-                                    <li><i class="fa-solid fa-heart"></i>B+ Washington, USA (13.02.2022)</li>
+                                @foreach ($bloodrequests as $br)
+                                <ul style="padding: 14px 0px 14px 0px;">
+                                    <li><i class="fa-solid fa-heart"></i>{{$br->blood_group}},{{@$br->division->name}},{{@$br->district->name}},{{@$br->upazila->name}},({{@$br->phone}}),({{@$br->created_at}})</li>
                                     
                                 </ul>
+                                
+                                @endforeach
+                                
                             </div>
                         </div>
                         <div class="col-lg-6 row-item">
                             <div class="appointment-area__single appointment-area__form">
                                 <h4>Request For Blood</h4>
-                                <form action="{{route('app.blood-request.store')}}" method="post" name="appointmentForm">
+                                <form action="{{route('app.blood-request.store')}}" method="post"
+                                    name="appointmentForm">
                                     @csrf
                                     <div class="input-group-column">
-                                        <div class="input">
-                                            <input type="text" name="name" id="appointmentName"
-                                                placeholder="Your Name" >
+                                        <div class="">
+                                            <input type="text" class="form-control" name="name" id="appointmentName"
+                                                placeholder="Your Name">
                                         </div>
-                                        <div class="input">
-                                            <input type="number" name="phone" id="appointmentNumber"
-                                                placeholder="Phone Number" >
+                                        <div class="">
+                                            <input type="number" class="form-control" name="phone"
+                                                id="appointmentNumber" placeholder="Phone Number">
                                         </div>
                                     </div>
-                                    <div class="input">
-                                        <input type="email" name="email" id="appointmentEmail"
-                                            placeholder="Your Email" >
+                                    <div class="">
+                                        <input type="email" class="form-control" name="email" id="appointmentEmail"
+                                            placeholder="Your Email">
                                     </div>
-                                    <div class="input">
-                                        <select class="select-donation-type" name="blood_group">
-                                            <option data-display="Blood Group" selected>Blood Group</option>
-                                                   <option value="AB+">AB+</option>
-                                                   <option value="AB-">AB-</option>
-                                                   <option value="O+">O+</option>
-                                                   <option value="O-">O-</option>
-                                                   <option value="A+">A+</option>
-                                                   <option value="A-">A-</option>
+                                    <div class="">
+                                        <select class="form-control" name="blood_group">
+                                            <option data-display="Blood Group" selected>Select Blood Group</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                        </select>
+                                    </div>
+                                    <div class="">
+                                        <select class="form-control" name="division_id" id="division_id_1">
+                                            <option data-display="Division" selected>Select Division</option>
+                                            @foreach ($divisions as $dv)
+                                            <option value="{{$dv->id}}">{{$dv->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="">
+                                        <select class="form-control" name="district_id" id="district_id_1">
+                                            <option data-display="District" selected>Select District</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="">
+                                        <select class="form-control" name="upazila_id" id="upazila_id_1">
+                                            <option data-display="Upazila" selected>Select Upazila</option>
+
                                         </select>
                                     </div>
 
-                                    <div class="input">
-                                        <textarea name="message" id="appointmentMessage" cols="30"
+                                    <div class="">
+                                        <textarea name="message" class="form-control" id="appointmentMessage" cols="30"
                                             rows="10" placeholder="Enter Your Message with full information"></textarea>
                                     </div>
                                     <button type="submit" class="button button--tertiary button--effect">Submit
@@ -448,24 +473,25 @@
 
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="myModal">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" id="modal-close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModal">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" id="modal-close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-tbody">
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modal-close" data-dismiss="modal">Close</button>
+
+            </div>
         </div>
-        <div class="modal-body" id="modal-tbody">
-            
-            
-        </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="modal-close" data-dismiss="modal">Close</button>
-        
-        </div>
-    </div>
     </div>
 </div>
 @endsection
@@ -473,7 +499,7 @@
 
 <script>
     $(document).ready(function () {
-        
+
         $('#division_id').change(function (e) {
             e.preventDefault();
             let division_id = $(this).val();
@@ -481,18 +507,20 @@
             $.ajax({
                 url: '/getDistrict',
                 type: 'GET',
-                data: {division_id},
+                data: {
+                    division_id
+                },
                 success: function (data) {
-                   let html = '<option>Select District</option>';
+                    let html = '<option>Select District</option>';
 
-                   data.map(function(item){
+                    data.map(function (item) {
                         html += `<option value="${item.id}">${item.name}</option>`;
-                   });
+                    });
 
-                   $('#district_id').html(html);
+                    $('#district_id').html(html);
                 }
             });
-           
+
         });
 
         $('#district_id').change(function (e) {
@@ -502,11 +530,13 @@
             $.ajax({
                 url: '/getUpazila',
                 type: 'get',
-                data: {district_id},
+                data: {
+                    district_id
+                },
                 success: function (data) {
                     let html = '<option>Select Upazila</option>';
-                    
-                    data.map(function(item){
+
+                    data.map(function (item) {
                         html += `<option value="${item.id}">${item.name}</option>`;
                     });
 
@@ -521,20 +551,20 @@
         });
 
         $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-           
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
-            
+
+
         $('#searchBtn').click(function (e) {
             e.preventDefault();
             let blood_group = $('#blood_group').val();
             let division_id = $('#division_id').val();
             let district_id = $('#district_id').val();
             let upazila_id = $('#upazila_id').val();
-      
+
             $.ajax({
                 url: '/getByBloodGroup',
                 type: 'post',
@@ -548,7 +578,7 @@
 
                 success: function (data) {
                     let html = '';
-                    $.each(data,function(index,val){
+                    $.each(data, function (index, val) {
                         html += `<tr>
                                     <td>${val.blood_group}</td>
                                     <td>${val.name}</td>
@@ -574,34 +604,89 @@
 
     });
 
-    
-                $(document).on('click','#modal-show', function(e){
-                        e.preventDefault();
-                        $('#myModal').modal('show');
-                        
-                        let id = $(this).data('id');
-                        $.ajax({
-                                url: '/getPhone',
-                                type: 'get',
-                                data: {
-                                    id,
-                                },
-                                success: function (data) {
-                                   let html = `<h4>Phone :${data.phone} </h4>`;
-                                        
-                                    $('#modal-tbody').html(html);
-                                }
-                        });
-                        
-                        
 
-                    });
-                $(document).on('click','#modal-close', function(e){
-                        e.preventDefault();
-                        $('#myModal').modal('hide');
-                        
+    $(document).on('click', '#modal-show', function (e) {
+        e.preventDefault();
+        $('#myModal').modal('show');
+
+        let id = $(this).data('id');
+        $.ajax({
+            url: '/getPhone',
+            type: 'get',
+            data: {
+                id,
+            },
+            success: function (data) {
+                let html = `<h4>Phone :${data.phone} </h4>`;
+
+                $('#modal-tbody').html(html);
+            }
+        });
+
+
+
+    });
+    $(document).on('click', '#modal-close', function (e) {
+        e.preventDefault();
+        $('#myModal').modal('hide');
+
+    });
+
+
+    // Request
+
+    $(document).ready(function () {
+
+        $('#division_id_1').change(function (e) {
+            e.preventDefault();
+            let division_id = $(this).val();
+
+            $.ajax({
+                url: '/getDistrict',
+                type: 'GET',
+                data: {
+                    division_id
+                },
+                success: function (data) {
+                    let html = '<option>Select District</option>';
+
+                    data.map(function (item) {
+                        html += `<option value="${item.id}">${item.name}</option>`;
                     });
 
+                    $('#district_id_1').html(html);
+                }
+            });
+
+        });
+
+        $('#district_id_1').change(function (e) {
+            e.preventDefault();
+            let district_id = $(this).val();
+
+            $.ajax({
+                url: '/getUpazila',
+                type: 'get',
+                data: {
+                    district_id
+                },
+                success: function (data) {
+                    let html = '<option>Select Upazila</option>';
+
+                    data.map(function (item) {
+                        html += `<option value="${item.id}">${item.name}</option>`;
+                    });
+
+                    $('#upazila_id_1').html(html);
+                }
+            });
+        });
+        $('#upazila_id_1').change(function (e) {
+            e.preventDefault();
+            let upazila_id = $(this).val();
+
+        });
+    });
 
 </script>
 @endpush

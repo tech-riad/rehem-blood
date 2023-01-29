@@ -42,6 +42,7 @@ Route::get('/getUpazila',[DonorController::class, 'getUpazila'])->name('getUpazi
 
 
 
+
 Route::group(['as'=>'app.','prefix'=>'app','namespace'=>'Backend','middleware'=>['auth','web']],function () {
 
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard.index');
@@ -73,6 +74,7 @@ Route::group(['as'=>'app.','prefix'=>'app','namespace'=>'Backend','middleware'=>
     Route::group(['as'=>'blood-request.','prefix'=>'blood-request'],function(){
 
         Route::get('/',[BloodRequestController::class,'index'])->name('index');
+        Route::get('/index',[BloodRequestController::class,'getRequest'])->name('getRequest');
         Route::post('/blood',[BloodRequestController::class,'create'])->name('create');
         Route::post('/store',[BloodRequestController::class,'store'])->name('store');
         

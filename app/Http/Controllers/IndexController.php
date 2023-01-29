@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BloodRequest;
 use App\Models\District;
 use App\Models\Division;
 use App\Models\Donor;
@@ -21,8 +22,17 @@ class IndexController extends Controller
         $districts = District::all();
         $divisions = Division::all();
         $upazilas = Upazila::all();
-        return view('website.index',compact('districts','divisions','upazilas'));
+        $bloodrequests = BloodRequest::orderBy('created_at', 'desc')->get();
+        return view('website.index',compact('districts','divisions','upazilas','bloodrequests'));
     }
+    // public function getbloodrequest()
+    // {
+    //     $districts = District::all();
+    //     $divisions = Division::all();
+    //     $upazilas = Upazila::all();
+    //     $bloodrequests = BloodRequest::all();
+    //     return view('website.index',compact('bloodrequests','divisions','districts','upazilas'));
+    // }
     public function search_donor()
     {
         $districts = District::all();

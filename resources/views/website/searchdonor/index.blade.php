@@ -121,11 +121,9 @@
 
 <section>
     <main class="container-fluid bordered">
-
         <div class="card">
             <div class="card-boby">
                 <div class="row">
-                    
                         <div class="table">
                             <div class="card">
                                 <div class="card-body">
@@ -133,7 +131,6 @@
                                 </div>
                             </div>
                         </div>
-                   
                 </div>
             </div>
         </div>

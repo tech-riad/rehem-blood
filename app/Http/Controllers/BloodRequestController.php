@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\BloodRequest;
+use App\Models\District;
+use App\Models\Division;
+use App\Models\Upazila;
 use Illuminate\Http\Request;
 
 class BloodRequestController extends Controller
@@ -14,8 +17,13 @@ class BloodRequestController extends Controller
      */
     public function index()
     {
-        return view('bloodrequest.index');
+        $divisions = Division::all();
+        $districts = District::all();
+        $upazilas = Upazila::all();
+        $bloodrequests = BloodRequest::orderBy('created_at', 'desc')->get();
+        return view('bloodrequest.index',compact('bloodrequest','divisions','districts','upazilas'));
     }
+   
 
     /**
      * Show the form for creating a new resource.

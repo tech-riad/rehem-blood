@@ -9,4 +9,16 @@ class BloodRequest extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function district(){
+        return $this->belongsTo(District::class);
+    }
+    public function division(){
+        return $this->belongsTo(Division::class);
+    }
+    public function upazila(){
+        return $this->belongsTo(Upazila::class);
+    }
+
+
 }

@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->string('blood_group');
             $table->longText('message');
+            $table->unsignedBigInteger('division_id');
+            $table->unsignedBigInteger('district_id');
+            $table->unsignedBigInteger('upazila_id');
             $table->timestamps();
         });
     }

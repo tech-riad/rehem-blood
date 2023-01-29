@@ -16,36 +16,33 @@
                         <table id="customTable" class="table table-striped table-bordered " style="width:100%">
                             <thead>
                                 <tr>
-                                    <th >SL</th>
+                                    <th >Sl</th>
                                     <th >Name</th>
                                     <th >Phone</th>
-                                    <th >Patient Age</th>
-                                    <th >Patient Problem</th>
-                                    <th >Hospital Name</th>
-                                    <th >Area</th>
+                                    <th >Email</th>
+                                    <th >Division</th>
+                                    <th >Upazila</th>
                                     <th >District</th>
-                                    <th >Date of Blood Donation</th>
                                     <th >Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                <?php $i=1 ?>
+                                @foreach ($bloodrequest as $br)
                                 <tr>
-                                    
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$i++}}</td>
+                                    <td>{{@$br->name}}</td>
+                                    <td>{{@$br->phone}}</td>
+                                    <td>{{@$br->email}}</td>
+                                    <td>{{@$br->division->name}}</td>
+                                    <td>{{@$br->district->name}}</td>
+                                    <td>{{@$br->upazila->name}}</td>
                                     <td>
                                         <a href="" class="btn btn-success p-2"><i style="margin-left: 0.3125rem;" class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="" class="btn btn-danger deleteBtn p-2"><i style="margin-left: 0.3125rem;" class="fa-solid fa-trash"></i></a>
                                     </td>
                                 </tr>
+                                @endforeach
                                
                             </tbody>
                         </table>
