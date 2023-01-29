@@ -28,7 +28,7 @@
                             </thead>
                             <tbody>
                                 <?php $i=1 ?>
-                                @foreach ($bloodrequest as $br)
+                                @foreach ($bloodrequests as $br)
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{@$br->name}}</td>
