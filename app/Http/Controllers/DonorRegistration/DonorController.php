@@ -150,7 +150,51 @@ class DonorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $donor= Donor::updateOrCreate([
+            'id' =>$id],
+            [
+            'name' => $request->name,
+            'blood_group' => $request->blood_group,
+            'dob' => $request->dob,
+            'dob' => $request->dob,
+            'age' => $request->age,
+            'height' => $request->height,
+            'weight' => $request->weight,
+            'division_id' => $request->division_id,
+            'district_id' => $request->district_id,
+            'upazila_id' => $request->upazila_id,
+            'area' => $request->area,
+            
+        ]);
+
+        return redirect()->route('donor-dashboard.donor_dashboard');
+    }
+
+
+    
+    public function update_image(Request $request, $id)
+    {   
+        $donor= Donor::where('id',$id)->first();
+        $data = $request->all();
+        
+        if (@$data['image']) {
+           
+            $imageName = 'image_'.time().'.'.$data['image']->getClientOriginalExtension();
+            $destinationPath = 'uploads/donorimages/';
+            $data['image']->move(public_path($destinationPath), $imageName);
+
+            $image = $destinationPath . $imageName;
+
+            
+            $donor->update([
+                'image' => $image,
+            ]);
+
+            
+        }
+        
+            
+        return redirect()->route('donor-dashboard.donor_dashboard');
     }
 
     /**

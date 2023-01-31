@@ -3698,9 +3698,9 @@ Preloader Area Style*/
 /* ==== 
  --------- (4.2) hero section styles start ---------
  ==== */
-.hero-slider-item {
-  padding-top: 210px;
-  padding-bottom: 300px;
+ .hero-slider-item {
+  padding-top: 81px;
+  padding-bottom: 152px;
   position: relative;
   z-index: 1;
 }
@@ -7768,3 +7768,66 @@ Preloader Area Style*/
 /* ==== 
  --------- (4.5) footer styles end ---------
  ==== *//*# sourceMappingURL=style.css.map */
+
+ @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+.image{
+    height: 150px;
+    border: 1px solid rgb(196, 196, 196);
+    padding: 2px;
+}
+.name{
+    background-color: rgb(196, 196, 196);
+   padding: 3px;
+    width: 50%;
+    font-weight: 500;
+    margin: 0;
+}
+
+.name2{
+    width: 100%;
+    padding: 3px;
+    background-color: rgb(196, 196, 196);
+    margin: 0;
+}
+.name3{
+    margin: 0;
+    width: 50%;
+}
+.name4{
+    margin: 0;
+    width: 100%;
+}
+.name5{
+    color: rgb(10, 142, 230);
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:991px) {
+    #main{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+}
+@media (max-width:768px) {
+    .name{
+        width: 100%;
+    }
+    .name3{
+        margin: 0;
+        width: 100%;
+    }  
+}
+

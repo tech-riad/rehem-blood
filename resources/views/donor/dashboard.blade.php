@@ -25,8 +25,9 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <div class="account-settings">
-                                <h1>{{Auth::guard('donor')->user()->name }}</h1>
-                                <form id="image-upload" method="POST" enctype="multipart/form-data">
+                                <h1>{{Auth::guard('donor')->user()->id }}</h1>
+                                <form id="image-upload" action="{{route('donor-dashboard.update_image',Auth::guard('donor')->user()->id )}}" method="put" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="user-profile">
                                         <div class="img d-flex flex-column align-items-center">
                                             <div class="user-avatar">
@@ -34,27 +35,26 @@
                                                     src="https://schoolcollege.xyz/female.jpeg">
 
                                             </div>
-                                            <input type="hidden" name="id" value="6">
-                                            <span class="text-danger" id="image-input-error"></span>
-                                            <button class="btn btn-primary" type="submit" id="btn-save"
-                                                style="margin-bottom: 15px; margin-top:5px;display:none">Save</button>
                                         </div>
                                         <div class="img-select">
                                             <label for="inputTag">
                                                 Select Image
-                                                <input name="photo" id="inputTag" type="file">
+                                                <input name="image"  id="inputTag" type="file">
                                             </label>
                                         </div>
+                                        <button type="submit" class="btn btn-success">Update</button>
                                     </div>
+
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <form action="#" method="POST">
+                    <form action="{{route('donor-dashboard.update_donor',Auth::guard('donor')->user()->id )}}" method="put">
                         @csrf
-                        <input type="hidden" name="_token" value="y3LL403gbT3DEj4MoyEeZEYeeUM4gvH2QX0b6Q7B">
+                        
+                        
                         <div class="card h-100">
                             <div class="card-body">
                                 <div class="row gutters">
@@ -70,21 +70,49 @@
                                                 id="fullName" placeholder="Enter full name">
                                         </div>
                                     </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="fullName">Height</label>
+                                            <input type="text" class="form-control" name="height" value="{{Auth::guard('donor')->user()->height ?? ''}}"
+                                                id="fullName" placeholder="Enter height">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="fullName">Weight</label>
+                                            <input type="text" class="form-control" name="weight" value="{{Auth::guard('donor')->user()->weight ?? ''}}"
+                                                id="fullName" placeholder="Enter height">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="fullName">Age</label>
+                                            <input type="text" class="form-control" name="age" value="{{Auth::guard('donor')->user()->age ?? ''}}"
+                                                id="fullName" placeholder="Enter height">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="fullName">Area</label>
+                                            <input type="text" class="form-control" name="area" value="{{Auth::guard('donor')->user()->area ?? ''}}"
+                                                id="fullName" placeholder="Enter height">
+                                        </div>
+                                    </div>
 
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="eMail">Email</label>
-                                            <input type="email" class="form-control" id="eMail"
-                                                placeholder="Enter email ID" name="email" value="{{Auth::guard('donor')->user()->email ?? '' }}">
+                                            <input  class="form-control" id="eMail"
+                                                placeholder="Enter email ID"  value="{{Auth::guard('donor')->user()->email ?? '' }}" readonly>
                                         </div>
                                     </div>
 
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="phone">Phone</label>
-                                            <input type="text" class="form-control" id="phone"
-                                                placeholder="Enter phone number" name="phone"
-                                                value="{{Auth::guard('donor')->user()->phone ??  ''}}">
+                                            <input class="form-control" id="phone"
+                                                placeholder="Enter phone number"
+                                                value="{{Auth::guard('donor')->user()->phone ??  ''}}" readonly>
                                         </div>
                                     </div>
                                     
@@ -153,7 +181,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="#" class="btn btn-success">Update</a>
+                                    <Button type="submit" class="btn btn-success">Update</Button>
                                 </div>
                             </div>
                         </div>

@@ -22,17 +22,17 @@
                                     <div class="footer-area__single">
                                         <h5>Quick Links</h5>
                                         <ul>
-                                            <li>
+                                            {{-- <li>
                                                 <a href="services.html">
                                                     <i class="fa-solid fa-angles-right"></i>Service
                                                 </a>
-                                            </li>
+                                            </li> --}}
                                             <li>
-                                                <a href="about-us.html">
+                                                <a href="#">
                                                     <i class="fa-solid fa-angles-right"></i>About Us
                                                 </a>
                                             </li>
-                                            <li>
+                                            {{-- <li>
                                                 <a href="campaigns.html">
                                                     <i class="fa-solid fa-angles-right"></i>New Campaign
                                                 </a>
@@ -46,11 +46,11 @@
                                                 <a href="contact-us.html">
                                                     <i class="fa-solid fa-angles-right"></i>Contact
                                                 </a>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-2 col-sm-6">
+                                {{-- <div class="col-md-6 col-lg-2 col-sm-6">
                                     <div class="footer-area__single">
                                         <h5>Services</h5>
                                         <ul>
@@ -108,7 +108,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <hr>
                             <div class="footer-area__bottom">
@@ -141,13 +141,13 @@
                                                     <i class="fa-brands fa-pinterest-p"></i>
                                                 </a>
                                             </div>
-                                            <nav aria-label="breadcrumb">
+                                            {{-- <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="privacy-policy.html">Privacy Policy</a></li>
                                                     <li class="breadcrumb-item"><a href="terms-conditions.html">Terms & Conditions</a></li>
                                                     <li class="breadcrumb-item"><a href="faq.html">FAQ</a></li>
                                                 </ol>
-                                            </nav>
+                                            </nav> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                           <p class="secondary neutral-bottom">Copyright &copy; 2022 <a href="https://themeforest.net/user/croptheme">Blad Ai</a>. All rights reserved.</p>
+                           <p class="secondary neutral-bottom">Copyright &copy; 2023 WFDDHAKA.XYZ. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

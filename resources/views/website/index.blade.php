@@ -80,6 +80,10 @@
 <!-- ==== overview section start ==== -->
 <section class="overview">
     <div class="container">
+
+        @if (isset(Auth::guard('donor')->user()->email ))
+            
+        @else
         <div class="explore-area wow fadeInUp">
             <div class="explore-area__single">
                 <div class="explore-area__single-content">
@@ -100,6 +104,8 @@
                         class="fa-solid fa-arrow-right-to-bracket"></i></a>
             </div>
         </div>
+        @endif
+        
         <div class="overview-area section-space">
             <div class="row neutral-row justify-content-center">
                 <div class="col-sm-6 col-md-6 col-lg-4 align-center row-item">

@@ -12,8 +12,7 @@
                                 <h4>Search Donor</h4>
                                 <form action="#" method="get" name="appointmentForm">
                                     @csrf
-                                    <input type="hidden" name="class_id" id="class_id">
-                                    <input type="hidden" name="shift_id" id="shift_id">
+                                    
                                     <div class="row py-2" id="all-row-py-2">
                                         <div class="col-sm-3"> <label for="blood_group"> Blood Group</label>
                                             <select class="form-control" id="blood_group" name="blood_group">
@@ -59,35 +58,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="appointment-area">
-                    <div class="row neutral-row">
-                        <div class="col-lg-12 row-item">
-                            <div class="appointment-area__single appointment-area__form">
-                                <table class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Blood Group</th>
-                                            <th>Name</th>
-                                            <th>Division</th>
-                                            <th>District</th>
-                                            <th>Upazila</th>
-                                            <th>Contact </th>
-                                        </tr>
 
-
-                                    </thead>
-                                    <tbody id="donor-tbody">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -120,19 +91,9 @@
 </section>
 
 <section>
-    <main class="container-fluid bordered">
-        <div class="card">
-            <div class="card-boby">
-                <div class="row">
-                        <div class="table">
-                            <div class="card">
-                                <div class="card-body">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
+    <main class="container">
+        <div class="row" id="search-person">
+
         </div>
 
     </main>
@@ -225,32 +186,46 @@
                     $.each(data, function (index, val) {
 
 
-                        html +=`<div class="col-lg-4">
-                        <div class="table">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2>${val.name}</h2>
+                        html += `<div class="col-lg-6 mt-2 mb-2">
+                <div class="card">
+                    <div class="card-boby">
+                        <div class="row p-2" id="main">
+                            <div class="col-lg-2 col-md-5" id="main">
+                                <img class="image" style="height:99px; width:300px;margin-top:1px;margin-left:1px;" src="https://res.cloudinary.com/dyjw9ybsc/image/upload/v1674566584/own-img/man_l7fsii.png" alt="">
+                            </div>
+                            <div class="col-lg-10 col-md-6">
+                                <div class="wrap">
+                                   <div class="d-flex gap-5 align-items-center">
+                                    <p class="name">Name:</p>
+                                    <p class="name2">${val.name}</p>
+                                </div> 
+                                  
+                                   <div class="d-flex gap-5 align-items-center">
+                                    <p class="name3">Blood Group:</p>
+                                    <p class="name4">${val.blood_group}</p>
+                                </div> 
+                                   <div class="d-flex gap-5 align-items-center">
+                                    <p class="name3">Mobile:</p>
+                                    <p class="name4 name5">
+                                        <a type="button" id="modal-show" data-id="${val.id}" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </p>
+                                </div> 
+                                   
                                 </div>
+                               
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
                         `;
-                        // html += `<tr>
-                        //             <td>${val.blood_group}</td>
-                        //             <td>${val.name}</td>
-                        //             <td>${val.division.name}</td>
-                        //             <td>${val.district.name}</td>
-                        //             <td>${val.upazila.name}</td>
-                        //             <td>
-                        //                 <a type="button" id="modal-show" data-id="${val.id}" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                        //                     <i class="fa fa-eye"></i>
-                        //                 </a>
-                        //             </td>
-                        //         </tr>`;
+
 
                     });
 
-                    $('.card-body').html(html);
+                    $('#search-person').html(html);
 
 
                 }

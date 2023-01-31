@@ -124,10 +124,10 @@ Route::group(['as'=>'donor-dashboard.','prefix'=>'donor-dashboard'],function(){
 
     
     Route::get('/dashboard',[DonorController::class,'donor_dashboard'])->name('donor_dashboard');
-    Route::post('/dashboard/{id}',[DonorController::class,'update_donor'])->name('update_donor');
     Route::get('/create',[DonorController::class,'create'])->name('donor_registration');
     Route::post('/store',[DonorController::class,'store'])->name('donor_store');
-    
+    Route::any('/dashboard/{id}',[DonorController::class,'update'])->name('update_donor');
+    Route::any('/image/{id}',[DonorController::class,'update_image'])->name('update_image');
  
 
 });
