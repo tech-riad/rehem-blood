@@ -2,7 +2,7 @@
 <!-- ==== topbar start ==== -->
 @section('content')
 <section class="appointment section-space-bottom">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="appointment-area">

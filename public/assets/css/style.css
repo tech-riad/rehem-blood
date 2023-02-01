@@ -1301,14 +1301,7 @@ button:hover {
   }
 }
 
-.neutral-row {
-  margin-bottom: -40px;
-}
-@media (max-width: 991px) {
-  .neutral-row {
-    margin-bottom: -30px;
-  }
-}
+
 .neutral-row .row-item {
   margin-bottom: 40px;
 }
@@ -2864,6 +2857,11 @@ span {
     font-size: 30px;
   }
 }
+label {
+  color: #000;
+  font-size: 23px;
+  font-weight: 600;
+}
 
 /* ==== 
  --------- (3.2) form styles end ---------
@@ -2904,8 +2902,9 @@ Preloader Area Style*/
 /* ==== 
  --------- (4.1) header styles start ---------
  ==== */
-.topbar {
+ .topbar {
   background-color: #111111;
+  height: 70px;
 }
 @media (max-width: 991px) {
   .topbar {
@@ -2947,8 +2946,8 @@ Preloader Area Style*/
   flex-wrap: wrap;
 }
 .topbar-area__left a {
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 25px;
+  line-height: 25px;
   font-weight: 400;
   display: inline-flex;
   align-items: center;
@@ -2993,6 +2992,7 @@ Preloader Area Style*/
   top: 0px;
   bottom: 0px;
   width: 3000px;
+  margin-top: -2px;
   background-color: #ea062b;
   z-index: -1;
 }
@@ -4074,8 +4074,6 @@ Preloader Area Style*/
   align-items: center;
   justify-content: space-between;
   position: relative;
-  top: -87px;
-  margin-bottom: -87px;
   z-index: 1;
 }
 @media (max-width: 1199px) {

@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-nav" href="{{url('/')}}">
-                <img src="{{asset('assets/images/logo (2).png')}}" style="height: 100px;" alt="Logo" role="button" >
+                <img src="{{asset('assets/images/logo (2).png')}}" style="height: 61px;margin-top: 8px;" alt="Logo" role="button" >
                 
             </a>
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" >

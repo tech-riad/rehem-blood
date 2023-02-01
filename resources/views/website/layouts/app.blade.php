@@ -9,7 +9,7 @@
   
     @include('website.layouts.topbar')
     
-    @include('website.layouts.nav')
+    {{-- @include('website.layouts.nav') --}}
     <!-- partial:partials/_sidebar.html -->
    
     <!-- partial: sideber end -->

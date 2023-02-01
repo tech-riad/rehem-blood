@@ -9,7 +9,7 @@
 <!-- ==== sidenav end ==== -->
 
 <!-- ==== hero section start ==== -->
-<section class="hero-slider-area">
+{{-- <section class="hero-slider-area">
     <div class="hero-slider owl-carousel owl-theme">
         <div class="hero-slider-item bg-img" data-background="assets/images/hero/hero-slider-bg.png">
             <div class="container">
@@ -74,10 +74,145 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ==== #hero section end ==== -->
 
 <!-- ==== overview section start ==== -->
+<style>
+    #x-session .form-control {
+    width: 336px;
+    padding: 10px 29px;
+    font-size: 19px;
+    font-weight: 200;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: 4px 4px 10px 0 rgb(0 0 0 / 10%);
+    transition: .4s;
+    
+}
+th{
+    color: #000;
+    font-size: 23px;
+    font-weight: 600;
+}
+button#searchBtn {
+    background: #ea062b;
+    padding: 13px 26px;
+    font-size: 19px;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 0 rgb(41 44 214 / 40%);
+    transition: .4s;
+}
+
+button#searchBtn:hover {
+    box-shadow: 4px 4px 20px 0 rgb(18 98 218 / 60%);
+    background: #fff;
+    color: #ea062b;
+    border: 1px solid #ea062b;
+}
+</style>
+<!-- ==== #overview section end ==== -->
+<section class="appointment section-space-bottom" id="x-session">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="appointment-area">
+                    <div class="row neutral-row">
+                        <div class="col-lg-12 row-item">
+                            <div class="appointment-area__single appointment-area__form">
+                                <h4 style="background-color: #ea062b;
+                                
+                                padding: 9px;
+                                border-radius: 10px;
+                                color: #fff;">Search Donor</h4>
+                                <form action="#" method="get" name="appointmentForm">
+                                    @csrf
+                                    
+                                    <div class="row py-2" id="all-row-py-2">
+                                        <div class="col-sm-3"> <label for="blood_group"> Blood Group</label>
+                                            <select class="form-control" id="blood_group" name="blood_group">
+                                                <option label="Select One" selected></option>
+                                                <option value="AB+">AB+</option>
+                                                <option value="AB-">AB-</option>
+                                                <option value="O+">O+</option>
+                                                <option value="O-">O-</option>
+                                                <option value="A+">A+</option>
+                                                <option value="A-">A-</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label for="division_id">Division</label>
+                                            <select name="division_id" id="division_id"
+                                                class="form-control chosen-select">
+                                                <option value="">Select One</option>
+                                                @foreach ($divisions as $dv)
+                                                <option value="{{$dv->id}}">{{$dv->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label for="district_id">District</label>
+                                            <select name="district_id" id="district_id" class="form-control">
+                                                <option value="">Select District</option>
+
+                                            </select>
+                                        </div>
+
+
+                                        <div class="col-sm-3"> <label for="upazila_id">Select Upazila</label>
+                                            <select name="upazila_id" id="upazila_id" class="form-control">
+                                                <option value="">Select Upazila</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class=" fas fa-arrow-down"
+                                        id="searchBtn">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="appointment-area">
+                    <div class="row neutral-row">
+                        <div class="col-lg-12 row-item">
+                            <div class="appointment-area__single appointment-area__form">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Blood Group</th>
+                                            <th>Name</th>
+                                            <th>Division</th>
+                                            <th>District</th>
+                                            <th>Upazila</th>
+                                            <th>Contact </th>
+                                        </tr>
+
+
+                                    </thead>
+                                    <tbody id="donor-tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</section>
+
 <section class="overview">
     <div class="container">
 
@@ -171,103 +306,6 @@
             </div>
         </div>
     </div>
-</section>
-<!-- ==== #overview section end ==== -->
-<section class="appointment section-space-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="appointment-area">
-                    <div class="row neutral-row">
-                        <div class="col-lg-12 row-item">
-                            <div class="appointment-area__single appointment-area__form">
-                                <h4>Search Donor</h4>
-                                <form action="#" method="get" name="appointmentForm">
-                                    @csrf
-                                    <input type="hidden" name="class_id" id="class_id">
-                                    <input type="hidden" name="shift_id" id="shift_id">
-                                    <div class="row py-2" id="all-row-py-2">
-                                        <div class="col-sm-3"> <label for="blood_group"> Blood Group</label>
-                                            <select class="form-control" id="blood_group" name="blood_group">
-                                                <option label="Select One" selected></option>
-                                                <option value="AB+">AB+</option>
-                                                <option value="AB-">AB-</option>
-                                                <option value="O+">O+</option>
-                                                <option value="O-">O-</option>
-                                                <option value="A+">A+</option>
-                                                <option value="A-">A-</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label for="division_id">Division</label>
-                                            <select name="division_id" id="division_id"
-                                                class="form-control chosen-select">
-                                                <option value="">Select One</option>
-                                                @foreach ($divisions as $dv)
-                                                <option value="{{$dv->id}}">{{$dv->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label for="district_id">District</label>
-                                            <select name="district_id" id="district_id" class="form-control">
-                                                <option value="">Select District</option>
-
-                                            </select>
-                                        </div>
-
-
-                                        <div class="col-sm-3"> <label for="upazila_id">Select Upazila</label>
-                                            <select name="upazila_id" id="upazila_id" class="form-control">
-                                                <option value="">Select Upazila</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary fas fa-arrow-down"
-                                        id="searchBtn">Search</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="appointment-area">
-                    <div class="row neutral-row">
-                        <div class="col-lg-12 row-item">
-                            <div class="appointment-area__single appointment-area__form">
-                                <table class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Blood Group</th>
-                                            <th>Name</th>
-                                            <th>Division</th>
-                                            <th>District</th>
-                                            <th>Upazila</th>
-                                            <th>Contact </th>
-                                        </tr>
-
-
-                                    </thead>
-                                    <tbody id="donor-tbody">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
 </section>
 
 {{-- MOdal --}}
