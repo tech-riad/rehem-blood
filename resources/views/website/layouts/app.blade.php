@@ -3,7 +3,11 @@
 
 @include('website.partials.head')
 
-
+<style>
+  body{
+    background-color: black;
+  }
+</style>
 <body>
 
   

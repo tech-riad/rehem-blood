@@ -1,7 +1,44 @@
 @extends('website.layouts.app')
 <!-- ==== topbar start ==== -->
 @section('content')
-<section class="appointment section-space-bottom">
+<style>
+    #x-session .form-control {
+        width: 336px;
+        padding: 10px 29px;
+        font-size: 19px;
+        font-weight: 200;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        box-shadow: 4px 4px 10px 0 rgb(0 0 0 / 10%);
+        transition: .4s;
+
+    }
+
+    th {
+        color: #000;
+        font-size: 23px;
+        font-weight: 600;
+    }
+
+    button#searchBtn {
+        background: #ea062b;
+        padding: 13px 26px;
+        font-size: 19px;
+        font-weight: 600;
+        border-radius: 10px;
+        box-shadow: 4px 4px 10px 0 rgb(41 44 214 / 40%);
+        transition: .4s;
+    }
+
+    button#searchBtn:hover {
+        box-shadow: 4px 4px 20px 0 rgb(18 98 218 / 60%);
+        background: #fff;
+        color: #ea062b;
+        border: 1px solid #ea062b;
+    }
+
+</style>
+<section class="appointment section-space-bottom" id="x-session">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -9,7 +46,11 @@
                     <div class="row neutral-row">
                         <div class="col-lg-12 row-item">
                             <div class="appointment-area__single appointment-area__form">
-                                <h4>Search Donor</h4>
+                                <h4 style="background-color: #ea062b;
+                                
+                                padding: 9px;
+                                border-radius: 10px;
+                                color: #fff;">Search Donor</h4>
                                 <form action="#" method="get" name="appointmentForm">
                                     @csrf
                                     
@@ -89,8 +130,14 @@
 
 
 </section>
+<style>
+#ajax-body p{
+    color: #fff;
+}
+</style>
 
-<section>
+<section class="ajax-body" style="color: #ffffff;
+background-color: #ea062b;">
     <main class="container">
         <div class="row" id="search-person">
 
@@ -187,7 +234,7 @@
 
 
                         html += `<div class="col-lg-6 mt-2 mb-2">
-                <div class="card">
+                <div class="card" style="background-color:#ea062b;">
                     <div class="card-boby">
                         <div class="row p-2" id="main">
                             <div class="col-lg-2 col-md-5" id="main">

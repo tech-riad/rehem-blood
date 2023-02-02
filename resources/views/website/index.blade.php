@@ -80,37 +80,40 @@
 <!-- ==== overview section start ==== -->
 <style>
     #x-session .form-control {
-    width: 336px;
-    padding: 10px 29px;
-    font-size: 19px;
-    font-weight: 200;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    box-shadow: 4px 4px 10px 0 rgb(0 0 0 / 10%);
-    transition: .4s;
-    
-}
-th{
-    color: #000;
-    font-size: 23px;
-    font-weight: 600;
-}
-button#searchBtn {
-    background: #ea062b;
-    padding: 13px 26px;
-    font-size: 19px;
-    font-weight: 600;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px 0 rgb(41 44 214 / 40%);
-    transition: .4s;
-}
+        width: 336px;
+        padding: 10px 29px;
+        font-size: 19px;
+        font-weight: 200;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        box-shadow: 4px 4px 10px 0 rgb(0 0 0 / 10%);
+        transition: .4s;
 
-button#searchBtn:hover {
-    box-shadow: 4px 4px 20px 0 rgb(18 98 218 / 60%);
-    background: #fff;
-    color: #ea062b;
-    border: 1px solid #ea062b;
-}
+    }
+
+    th {
+        color: #000;
+        font-size: 23px;
+        font-weight: 600;
+    }
+
+    button#searchBtn {
+        background: #ea062b;
+        padding: 13px 26px;
+        font-size: 19px;
+        font-weight: 600;
+        border-radius: 10px;
+        box-shadow: 4px 4px 10px 0 rgb(41 44 214 / 40%);
+        transition: .4s;
+    }
+
+    button#searchBtn:hover {
+        box-shadow: 4px 4px 20px 0 rgb(18 98 218 / 60%);
+        background: #fff;
+        color: #ea062b;
+        border: 1px solid #ea062b;
+    }
+
 </style>
 <!-- ==== #overview section end ==== -->
 <section class="appointment section-space-bottom" id="x-session">
@@ -128,7 +131,7 @@ button#searchBtn:hover {
                                 color: #fff;">Search Donor</h4>
                                 <form action="#" method="get" name="appointmentForm">
                                     @csrf
-                                    
+
                                     <div class="row py-2" id="all-row-py-2">
                                         <div class="col-sm-3"> <label for="blood_group"> Blood Group</label>
                                             <select class="form-control" id="blood_group" name="blood_group">
@@ -167,8 +170,7 @@ button#searchBtn:hover {
                                         </div>
                                     </div>
 
-                                    <button type="submit" class=" fas fa-arrow-down"
-                                        id="searchBtn">Search</button>
+                                    <button type="submit" class=" fas fa-arrow-down" id="searchBtn">Search</button>
                                 </form>
                             </div>
                         </div>
@@ -213,11 +215,126 @@ button#searchBtn:hover {
 
 </section>
 
+<section class="appointment section-space-bottom" id="appointment">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="appointment-area">
+                    <div class="row neutral-row">
+                        <div class="col-lg-12 row-item">
+                            <div class="appointment-area__single appointment-area__content">
+                                <h4 style="background-color: #ea062b;
+                                
+                                padding: 9px;
+                                border-radius: 10px;
+                                color: #fff;">Current Blood Request</h4>
+                                
+                                <ul style="padding: 14px 0px 14px 0px;">
+                                    <div class="row">
+                                        @foreach ($bloodrequests as $br)
+                                        <div class="col-lg-4 mt-2 text-bold">
+                                        <li>
+                                            <i class="fa-solid fa-droplet"></i>
+                                            <span style=" 
+                                            font-size: 22px;
+                                            font-weight: 600;
+                                            color: red;
+                                            background-color: #000;
+                                            padding: 8px;
+                                            margin-top: 11px;">{{$br->blood_group}},{{@$br->division->name}},{{@$br->district->name}},{{@$br->upazila->name}},({{@$br->phone}}),({{@$br->created_at}})</span>
+                                        </li>
+                                    </div>
+                                    @endforeach
+                                    </div>
+
+                                </ul>
+
+                                
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-lg-12 row-item">
+                <div class="appointment-area__single">
+                    <h4 style="background-color: #ea062b;
+                                padding: 9px;
+                                border-radius: 10px;
+                                color: #fff;">Request For Blood</h4>
+                    <form action="{{route('app.blood-request.store')}}" method="post" name="appointmentForm">
+                        @csrf
+                        <div class="row">
+                            <div class="com-lg-4"></div>
+                        </div>
+                        <div class="">
+                            <div class="">
+                                <input type="text" class="form-control" name="name" id="appointmentName"
+                                    placeholder="Your Name">
+                            </div>
+                            <div class="">
+                                <input type="number" class="form-control" name="phone" id="appointmentNumber"
+                                    placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="">
+                            <input type="email" class="form-control" name="email" id="appointmentEmail"
+                                placeholder="Your Email">
+                        </div>
+                        <div class="">
+                            <select class="form-control" name="blood_group">
+                                <option data-display="Blood Group" selected>Select Blood Group</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                            </select>
+                        </div>
+                        <div class="">
+                            <select class="form-control" name="division_id" id="division_id_1">
+                                <option data-display="Division" selected>Select Division</option>
+                                @foreach ($divisions as $dv)
+                                <option value="{{$dv->id}}">{{$dv->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="">
+                            <select class="form-control" name="district_id" id="district_id_1">
+                                <option data-display="District" selected>Select District</option>
+
+                            </select>
+                        </div>
+                        <div class="">
+                            <select class="form-control" name="upazila_id" id="upazila_id_1">
+                                <option data-display="Upazila" selected>Select Upazila</option>
+
+                            </select>
+                        </div>
+
+                        <div class="">
+                            <textarea name="message" class="form-control" id="appointmentMessage" cols="30" rows="5"
+                                placeholder="Enter Your Message with full information"></textarea>
+                        </div>
+                        <button type="submit" class="button button--tertiary button--effect">Submit
+                            Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="overview">
     <div class="container">
 
         @if (isset(Auth::guard('donor')->user()->email ))
-            
+
         @else
         <div class="explore-area wow fadeInUp">
             <div class="explore-area__single">
@@ -240,7 +357,7 @@ button#searchBtn:hover {
             </div>
         </div>
         @endif
-        
+
         <div class="overview-area section-space">
             <div class="row neutral-row justify-content-center">
                 <div class="col-sm-6 col-md-6 col-lg-4 align-center row-item">
@@ -307,6 +424,7 @@ button#searchBtn:hover {
         </div>
     </div>
 </section>
+
 
 {{-- MOdal --}}
 
@@ -426,92 +544,7 @@ button#searchBtn:hover {
 <!-- ==== #donor section end ==== -->
 
 <!-- ==== appointment section start ==== -->
-<section class="appointment section-space-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="appointment-area">
-                    <div class="row neutral-row">
-                        <div class="col-lg-6 row-item">
-                            <div class="appointment-area__single appointment-area__content">
-                                <h4>Current Blood Request</h4>
-                                @foreach ($bloodrequests as $br)
-                                <ul style="padding: 14px 0px 14px 0px;">
-                                    <li><i class="fa-solid fa-heart"></i>{{$br->blood_group}},{{@$br->division->name}},{{@$br->district->name}},{{@$br->upazila->name}},({{@$br->phone}}),({{@$br->created_at}})</li>
-                                    
-                                </ul>
-                                
-                                @endforeach
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6 row-item">
-                            <div class="appointment-area__single appointment-area__form">
-                                <h4>Request For Blood</h4>
-                                <form action="{{route('app.blood-request.store')}}" method="post"
-                                    name="appointmentForm">
-                                    @csrf
-                                    <div class="input-group-column">
-                                        <div class="">
-                                            <input type="text" class="form-control" name="name" id="appointmentName"
-                                                placeholder="Your Name">
-                                        </div>
-                                        <div class="">
-                                            <input type="number" class="form-control" name="phone"
-                                                id="appointmentNumber" placeholder="Phone Number">
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <input type="email" class="form-control" name="email" id="appointmentEmail"
-                                            placeholder="Your Email">
-                                    </div>
-                                    <div class="">
-                                        <select class="form-control" name="blood_group">
-                                            <option data-display="Blood Group" selected>Select Blood Group</option>
-                                            <option value="AB+">AB+</option>
-                                            <option value="AB-">AB-</option>
-                                            <option value="O+">O+</option>
-                                            <option value="O-">O-</option>
-                                            <option value="A+">A+</option>
-                                            <option value="A-">A-</option>
-                                        </select>
-                                    </div>
-                                    <div class="">
-                                        <select class="form-control" name="division_id" id="division_id_1">
-                                            <option data-display="Division" selected>Select Division</option>
-                                            @foreach ($divisions as $dv)
-                                            <option value="{{$dv->id}}">{{$dv->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="">
-                                        <select class="form-control" name="district_id" id="district_id_1">
-                                            <option data-display="District" selected>Select District</option>
 
-                                        </select>
-                                    </div>
-                                    <div class="">
-                                        <select class="form-control" name="upazila_id" id="upazila_id_1">
-                                            <option data-display="Upazila" selected>Select Upazila</option>
-
-                                        </select>
-                                    </div>
-
-                                    <div class="">
-                                        <textarea name="message" class="form-control" id="appointmentMessage" cols="30"
-                                            rows="10" placeholder="Enter Your Message with full information"></textarea>
-                                    </div>
-                                    <button type="submit" class="button button--tertiary button--effect">Submit
-                                        Now</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- ==== #appointment section end ==== -->
 
 

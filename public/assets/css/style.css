@@ -1319,6 +1319,7 @@ button:hover {
 }
 .section-header h2 {
   text-align: center;
+  color: #fff;
 }
 
 .thumb-ltr {
@@ -4979,12 +4980,12 @@ Preloader Area Style*/
   margin-bottom: -7px;
 }
 .appointment-area__content li i {
-  font-size: 18px;
+  font-size: 35px;
   color: #ea062b;
 }
 @media (max-width: 1199px) {
   .appointment-area__content li i {
-    font-size: 16px;
+    font-size: 25px;
   }
 }
 
@@ -6530,11 +6531,13 @@ Preloader Area Style*/
   margin-top: 15px;
   min-width: 160px;
   font-weight: 600;
+  color: #fff;
 }
 @media (max-width: 767px) {
   .registration-area__form .secondary {
     width: 100%;
     margin-top: -5px;
+    color: #fff;
   }
 }
 .registration-area__form .input {
@@ -7792,19 +7795,21 @@ Preloader Area Style*/
 .name2{
     width: 100%;
     padding: 3px;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(243, 232, 232);
     margin: 0;
 }
 .name3{
     margin: 0;
     width: 50%;
+    color: #fff;
 }
 .name4{
     margin: 0;
     width: 100%;
+    color: #fff;
 }
 .name5{
-    color: rgb(10, 142, 230);
+  color: #fff;
 }
 .wrap{
     display: flex;

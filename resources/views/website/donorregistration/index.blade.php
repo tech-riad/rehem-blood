@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="registration-area wow fadeInUp">
                     <div class="section-header section-inner-space">
-                        <h2 class="neutral-bottom">Blad Ai Organization</h2>
+                        <h2 class="neutral-bottom">Blood Donation Organaization</h2>
                     </div>
                     <div class="registration-area__form">
                         <form action="{{route('donor-register.donor_store')}}" method="post" name="registration__form">
